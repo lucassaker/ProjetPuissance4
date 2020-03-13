@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Colonne{
-  private List<Jeton> lesJetons;
+  private ArrayList<Jeton> lesJetons;
 
   public Colonne(){
     this.lesJetons = new ArrayList<Jeton>(0);
@@ -16,10 +16,10 @@ public class Colonne{
   }
 
   public void removeEnHaut(){
-    this.lesJetons.remove(this.lesJetons.taille()-1);
+    this.lesJetons.remove(this.lesJetons.size()-1);
   }
 
-  public ArrayList getColonne(){
+  public ArrayList<Jeton> getColonne(){
     return this.lesJetons;
   }
 }
