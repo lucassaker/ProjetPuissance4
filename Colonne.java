@@ -3,8 +3,9 @@ import java.util.*;
 public class Colonne{
   private ArrayList<Jeton> lesJetons;
 
-  public Colonne(){
-    this.lesJetons = new ArrayList<Jeton>(0);
+  public Colonne(int a){
+    if (a>=0) this.lesJetons = new ArrayList<Jeton>(a);
+    else this.lesJetons = new ArrayList<Jeton>(0);
   }
 
   public void ajouterJeton(Jeton j){
