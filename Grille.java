@@ -1,9 +1,11 @@
 import java.util.*;
 
 public class Grille{
-  private List<Colonne> laGrille;
+  private ArrayList<Colonne> laGrille;
 
-  public Grille(){
-    this.laGrille = new ArrayList<Colonne>(0);
+  public Grille(int a){
+    if (a>0) this.laGrille = new ArrayList<Colonne>(a);
+    else this.laGrille = new ArrayList<Colonne>(10);
   }
+
 }
