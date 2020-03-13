@@ -1,13 +1,15 @@
+import java.io.*;
+import java.util.*;
+
 public class Jeton {
   private char forme;
 
-  public Jeton(char c) throws JetonInvalide{ //catch incompatibleTypes
-    try{
-      if (c instanceof char[]) this.forme = c; else throw new JetonInvalide();
-    }
-    catch (JetonInvalide jt){
-      System.out.println("Le jeton saisie \u00e0 besoin d'un caractère");
-    }
+  public Jeton(char c) throws IOException{ //catch incompatibleTypes
+    this.forme = c;
+  }
+
+  public Jeton(){
+    this.forme = ' ';
   }
 
   public char getForme(){
@@ -16,5 +18,4 @@ public class Jeton {
   public void modifForme(char a){
     this.forme = a;
   }
-
 }
