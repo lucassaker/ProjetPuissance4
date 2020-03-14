@@ -22,7 +22,16 @@ public class Grille{
   }
 
   public void ajouterJeton(Jeton j, int posMalone){
-    this.laGrille.get(posMalone-1).ajouterJeton(j);
+    boolean doitJeRajouterUneLigne = this.laGrille.get(posMalone-1).ajouterJeton(j);
+    if (doitJeRajouterUneLigne == true){
+      rajouterLigne();
+    }
+  }
+
+  public void rajouterLigne(){
+    for(int i = 0; i<this.laGrille.size(); i++){
+      this.laGrille.get(i).getColonne().add(new Jeton());
+    }
   }
 
   public ArrayList<Colonne> getGrille(){

@@ -23,12 +23,17 @@ public class Colonne{
     }
   }
 
-  public void ajouterJeton(Jeton j){
+  public boolean ajouterJeton(Jeton j){
     int i = 0;
     while (this.lesJetons.get(i).getForme() != '.'){
       i++;
     }
     this.lesJetons.get(i).modifForme(j.getForme());
+    boolean res = true;
+    if (i != this.lesJetons.size()-1){
+      res = false;
+    }
+    return res;
   }
 
   public int taille(){
