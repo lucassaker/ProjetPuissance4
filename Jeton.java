@@ -9,7 +9,7 @@ public class Jeton {
   }
 
   public Jeton(){
-    this.forme = ' ';
+    this.forme = '.';
   }
 
   public char getForme(){
@@ -17,5 +17,8 @@ public class Jeton {
   }
   public void modifForme(char a){
     this.forme = a;
+  }
+  public String toString(){
+    return (" " + this.getForme() + " ");
   }
 }
