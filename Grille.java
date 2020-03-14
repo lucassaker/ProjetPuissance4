@@ -13,11 +13,21 @@ public class Grille{
   }
 
   public void afficher(){
-    for (int i = this.laGrille.get(0).taille()-1; i>=0; i--){
+    for (int i = this.laGrille.get(0).taille(); i>=-1; i--){
+      System.out.print("|");
       for (int y = 0; y<this.laGrille.size(); y++){
-        System.out.print(this.laGrille.get(y).getColonne().get(i).toString());
+        if ((i>=0 && i<this.laGrille.get(0).taille()) && (y>=0 && y<this.laGrille.size())){
+            System.out.print(this.laGrille.get(y).getColonne().get(i).toString());
+        }
+        else if (i==this.laGrille.get(0).taille()) {
+          System.out.print("---");
+        }
+        else if (i<0){
+          System.out.print("---");
+        }
       }
-      System.out.println("");
+      System.out.println("|");
+
     }
   }
 

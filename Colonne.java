@@ -48,15 +48,4 @@ public class Colonne{
     return this.lesJetons;
   }
 
-  public void afficher(){
-    for (int i = this.lesJetons.size()-1; i>0; i--){
-      System.out.println(this.lesJetons.get(i).toString());
-    }
-  }
-
-  public static void main(String[] args) throws IOException{
-    Colonne c = new Colonne();
-    c.ajouterJeton(new Jeton('g'));
-    c.afficher();
-  }
 }
