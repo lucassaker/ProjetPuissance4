@@ -7,10 +7,10 @@ public class main{
     Joueur j1 = new Joueur(true);
     Joueur j2 = new Joueur(false);
     for (int i = 0; i<10; i++){
+      g.afficher();
       g.ajouterJeton(j1.getJeton(), j1.jouer());
       g.afficher();
       g.ajouterJeton(j2.getJeton(), j2.jouer());
-      g.afficher();
     }
   }
   public static int getRandomInt(int max) {
