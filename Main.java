@@ -24,18 +24,16 @@ public class Main{
 			default:
 				break;
 		}
-		//for (int i = 0; i<10; i++){
-			
-		//}
+		
 		boolean fini = false;
-		int res = 0;
+		int res = 1;
 		
 		while(!(fini)) {
 			g.afficher();
 			g.ajouterJeton(j1.getJeton(), j1.jouer());
 			g.afficher();
 			g.ajouterJeton(j2.getJeton(), j2.jouer());
-			System.out.println(res++);
+			System.out.println("Vous etes a " + res++ + " coups.");
 		}
 	}
 	public static int getRandomInt(int max) {
