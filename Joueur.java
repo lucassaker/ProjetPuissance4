@@ -25,7 +25,7 @@ public class Joueur implements JoueurOrdinateurInterface{
     return sc.nextInt();
   }
 
-  public void ceToucherLaQueue(){
+  public void gagner(){
     System.out.println("Bien jouer!");
   }
 
