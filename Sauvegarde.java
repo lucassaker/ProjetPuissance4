@@ -5,7 +5,7 @@ import java.io.*;
  */
 public class Sauvegarde {
 
-	private Main jeu;
+	private Jeu jeu;
 	private String nomFichier;
 
 	/**
@@ -13,7 +13,7 @@ public class Sauvegarde {
 	 * @param p_joueur joueur a sauvegarder
 	 * @param p_nomFichier nom du fichier dans lequel on sauvegarde
 	 */
-	public Sauvegarde(Main p_jeu, String p_nomFichier) {
+	public Sauvegarde(Jeu p_jeu, String p_nomFichier) {
 		this.jeu = p_jeu;
 		this.nomFichier = p_nomFichier;
 	}
@@ -27,7 +27,7 @@ public class Sauvegarde {
 			oos.writeObject(jeu);
 			oos.close();
 		} catch (IOException e) {
-			System.out.println("erreur d’E/S");
+			System.out.println("erreur dï¿½E/S");
 			e.printStackTrace();
 		} catch (Exception e) {
 			System.out.println("erreur hors E/S");
@@ -41,10 +41,10 @@ public class Sauvegarde {
 	public void charge() {
 		try {
 			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nomFichier));
-			jeu = (Main)(ois.readObject());
+			jeu = (Jeu)(ois.readObject());
 			ois.close();
 		} catch (IOException e) {
-			System.out.println("erreur d’E/S");
+			System.out.println("erreur dï¿½E/S");
 			e.printStackTrace();
 		} catch (Exception e) {
 			System.out.println("erreur hors E/S");
