@@ -9,8 +9,9 @@ public class Jeu{
 			JoueurOrdinateurInterface j1 = null;
 			JoueurOrdinateurInterface j2 = null;
 			Scanner sc = new Scanner(System.in);
-			System.out.println("Voulez vous une grille par defaut ? oui/non ");
+			System.out.print("Voulez vous une grille par defaut ? (oui/non) : ");
 			String choix = sc.nextLine();
+			System.out.println("");
 			int nbColonne = 0;
 			switch (choix) {
 				case "non":
@@ -34,8 +35,8 @@ public class Jeu{
 			}
 //----------------------------Selection des joueur--------------------
 			boolean jeuValide = false;
+			System.out.println("Le combat seras entre qui et qui? (Ordinateur/Joueur) = O/J par exemple");
 			while (!(jeuValide)){
-				System.out.println("Le combat seras entre qui et qui? (Ordinateur/Joueur) = O/J par exemple");
 				String vs = sc.nextLine();
 				switch (vs){
 					case "J/J" :
@@ -75,16 +76,20 @@ public class Jeu{
 						break;
 
 					default :
+						System.out.println("Regardez l'exemple");
 						break;
 				}
 			}
 //-------------------------------La boucle du jeu---------------------------
+
 			boolean fini = false;
 			int res = 1;
 
 			while(!(fini)) {
+				clearConsole();
 				g.afficher();
 				g.ajouterJeton(j1.getJeton(), j1.jouer());
+				System.out.println("");
 				g.afficher();
 				g.ajouterJeton(j2.getJeton(), j2.jouer());
 				System.out.println("Vous etes a " + res++ + " coups.");
@@ -97,6 +102,12 @@ public class Jeu{
 			System.out.println("Ce n'est pas un nombre");
 		} catch(NullPointerException np){
 			System.out.println("Ce n'est pourtant pas compliquer de repondre oui ou non");
+		}
+	}
+
+	public final static void clearConsole(){
+		for (int i = 0; i<50; i++){
+			System.out.println("");
 		}
 	}
 }

@@ -16,7 +16,7 @@ public class Ordinateur implements JoueurOrdinateurInterface{
     if (first) System.out.print("L ordinateur joueras en premier et s'appel : " + this.nom);
     else System.out.print("L ordinateur joueras en deuxieme et s'appel : " + this.nom);
     this.monJeton = new Jeton(this.nom.charAt(0));
-    System.out.print(this.nom + ", prend comme forme la lettre : " + this.monJeton.getForme());
+    System.out.print(", il prend comme forme la lettre : " + this.monJeton.getForme() + "\n");
   }
 
   public int jouer(){
