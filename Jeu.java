@@ -84,9 +84,9 @@ public class Jeu{
 
 			boolean fini = false;
 			int res = 1;
-
+			System.out.println("\n\n");
 			while(!(fini)) {
-				clearConsole();
+				System.out.println("\n\n");
 				g.afficher();
 				g.ajouterJeton(j1.getJeton(), j1.jouer());
 				System.out.println("");
