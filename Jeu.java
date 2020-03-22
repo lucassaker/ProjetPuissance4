@@ -87,12 +87,25 @@ public class Jeu{
 			System.out.println("\n\n");
 			while(!(fini)) {
 				System.out.println("\n\n");
-				g.afficher();
-				g.ajouterJeton(j1.getJeton(), j1.jouer());
-				System.out.println("");
-				g.afficher();
-				g.ajouterJeton(j2.getJeton(), j2.jouer());
-				System.out.println("Vous etes a " + res++ + " coups.");
+				System.out.println("Voulez vous jouer? (j), sauvegarder la partie? (s), charger la derniere partie? (c)");
+				String reponse = sc.nextLine();
+				switch (reponse){
+					case "j" :
+						g.afficher();
+						g.ajouterJeton(j1.getJeton(), j1.jouer());
+						System.out.println("");
+						g.afficher();
+						g.ajouterJeton(j2.getJeton(), j2.jouer());
+						System.out.println("Vous etes a " + res++ + " coups.");
+						break;
+
+					case "s" :
+						System.out.println("fonctionnalite hors service");
+						fini = true;
+
+					case "c" :
+						System.out.println("fonctionnalite hors service");
+				}
 			}
 		}
 //--------------------------------------------------------------------------
