@@ -1,4 +1,7 @@
 import java.util.Scanner;
+/**
+ * class permettant de simuler un ordinateur
+ */
 import java.io.*;
 
 public class Ordinateur implements JoueurOrdinateurInterface{
@@ -8,7 +11,12 @@ public class Ordinateur implements JoueurOrdinateurInterface{
   private int nbCol;
   Scanner sc = new Scanner(System.in);
 
-
+  /**
+   * constructeur d'Ordinateur
+   * @param first
+   * @param nb
+   * @throws IOException
+   */
   public Ordinateur(boolean first, int nb) throws IOException{
     this.nbCol = nb;
     this.premier = first;
@@ -19,6 +27,10 @@ public class Ordinateur implements JoueurOrdinateurInterface{
     System.out.print(", il prend comme forme la lettre : " + this.monJeton.getForme() + "\n");
   }
 
+  /**
+   * methode qui permet d'annoncer que c'est le tour de l'Ordinateur
+   * @return res
+   */
   public int jouer(){
     System.out.println("--- A " + this.nom + " de jouer!");
     int res = getRandomInt(this.nbCol)+1;
@@ -26,14 +38,25 @@ public class Ordinateur implements JoueurOrdinateurInterface{
     return res;
   }
 
+  /**
+   * methode qui permet de dire que l'Ordinateur a gagné
+   */
   public void gagner(){
     System.out.println("Bien jouer!");
   }
 
+  /**
+   * methode qui permet de retourner un jeton
+   * @return un jeton
+   */
   public Jeton getJeton(){
     return this.monJeton;
   }
 
+  /**
+   * methode qui permet d'obtenir un nom aléatoire
+   * @return nom
+   */
   public String nomRandom(){
     String consonnes = "bcdfghjklmnpqrstvxz"; //19
     String voyels = "aeiouy"; //6
@@ -48,6 +71,13 @@ public class Ordinateur implements JoueurOrdinateurInterface{
     return nom;
   }
 
+  /**
+   * methode qui permet de définir une forme de jeton à l'Ordinateur
+   * @param str
+   * @param ch
+   * @param position
+   * @return char qui est cast en String
+   */
   public String addChar(String str, char ch, int position) {
     int len = str.length();
     char[]updatedArr = new char[len + 1];
@@ -55,8 +85,13 @@ public class Ordinateur implements JoueurOrdinateurInterface{
     updatedArr[position]= ch;
     str.getChars(position, len, updatedArr, position + 1);
     return new String(updatedArr);
-}
+  }
 
+  /**
+   * methode qui permet d'obtenir un nombre aléatoire
+   * @param max
+   * @return float qui est cast en int
+   */
   public static int getRandomInt(int max) {
 		return (int)(Math.floor(Math.random() * Math.floor(max)));
 	}

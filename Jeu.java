@@ -1,6 +1,9 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * class qui permet d'initialiser le Jeu
+ */
 public class Jeu{
 	public static void main(String[] args) throws IOException, IndexOutOfBoundsException {
 		try{

@@ -1,51 +1,73 @@
 import java.util.*;
 import java.io.*;
 
+/**
+ * class qu permet de définir le comportement de la Grille
+ */
 public class Grille{
-  private ArrayList<Colonne> laGrille;
+	private ArrayList<Colonne> laGrille;
 
-  public Grille(int a){
-    if (a>0) this.laGrille = new ArrayList<Colonne>(a);
-    else this.laGrille = new ArrayList<Colonne>(10);
-    for(int i = 0; i<a; i++){
-      this.laGrille.add(new Colonne());
-    }
-  }
+	/**
+	 * constructeur de la Grille
+	 * @param a
+	 */
+	public Grille(int a){
+		if (a>0) this.laGrille = new ArrayList<Colonne>(a);
+		else this.laGrille = new ArrayList<Colonne>(10);
+		for(int i = 0; i<a; i++){
+			this.laGrille.add(new Colonne());
+		}
+	}
 
-  public void afficher(){
-    for (int i = this.laGrille.get(0).taille(); i>=-1; i--){
-      System.out.print("|");
-      for (int y = 0; y<this.laGrille.size(); y++){
-        if ((i>=0 && i<this.laGrille.get(0).taille()) && (y>=0 && y<this.laGrille.size())){
-            System.out.print(this.laGrille.get(y).getColonne().get(i).toString());
-        }
-        else if (i==this.laGrille.get(0).taille()) {
-          System.out.print("---");
-        }
-        else if (i<0){
-          System.out.print("---");
-        }
-      }
-      System.out.println("|");
+	/**
+	 * methode qui permet d'afficher la Grille
+	 */
+	public void afficher(){
+		for (int i = this.laGrille.get(0).taille(); i>=-1; i--){
+			System.out.print("|");
+			for (int y = 0; y<this.laGrille.size(); y++){
+				if ((i>=0 && i<this.laGrille.get(0).taille()) && (y>=0 && y<this.laGrille.size())){
+					System.out.print(this.laGrille.get(y).getColonne().get(i).toString());
+				}
+				else if (i==this.laGrille.get(0).taille()) {
+					System.out.print("---");
+				}
+				else if (i<0){
+					System.out.print("---");
+				}
+			}
+			System.out.println("|");
 
-    }
-  }
+		}
+	}
 
-  public void ajouterJeton(Jeton j, int posMalone){
-    boolean doitJeRajouterUneLigne = this.laGrille.get(posMalone-1).ajouterJeton(j);
-    if (doitJeRajouterUneLigne == true){
-      rajouterLigne();
-    }
-  }
+	/**
+	 * methode qui permet d'ajouter un jeton a la Grille
+	 * @param j
+	 * @param posMalone
+	 */
+	public void ajouterJeton(Jeton j, int posMalone){
+		boolean doitJeRajouterUneLigne = this.laGrille.get(posMalone-1).ajouterJeton(j);
+		if (doitJeRajouterUneLigne == true){
+			rajouterLigne();
+		}
+	}
 
-  public void rajouterLigne(){
-    for(int i = 0; i<this.laGrille.size(); i++){
-      this.laGrille.get(i).getColonne().add(new Jeton());
-    }
-  }
+	/**
+	 * metohde qui permet d'ajouter une ligne a la Grille
+	 */
+	public void rajouterLigne(){
+		for(int i = 0; i<this.laGrille.size(); i++){
+			this.laGrille.get(i).getColonne().add(new Jeton());
+		}
+	}
 
-  public ArrayList<Colonne> getGrille(){
-    return this.laGrille;
-  }
+	/**
+	 * methode qui permet de retourner la Grille qui est une ArrayList
+	 * @return la Grille
+	 */
+	public ArrayList<Colonne> getGrille(){
+		return this.laGrille;
+	}
 
 }
