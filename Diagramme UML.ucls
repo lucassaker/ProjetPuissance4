@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="Jeton" project="ProjetPuissance4" file="/ProjetPuissance4/Jeton.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="178" width="153" x="572" y="746"/>    
+    <position height="-1" width="-1" x="556" y="872"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -96,7 +96,9 @@
   </association>  
   <association id="14">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="15" name="monJeton"/>      
+      <attribute id="15" name="monJeton">        
+        <position height="20" width="64" x="659" y="760"/>      
+      </attribute>      
       <multiplicity id="16" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
@@ -124,8 +126,12 @@
   </realization>  
   <association id="24">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="25" name="monJeton"/>      
-      <multiplicity id="26" minimum="0" maximum="1"/>    
+      <attribute id="25" name="monJeton">        
+        <position height="20" width="64" x="538" y="725"/>      
+      </attribute>      
+      <multiplicity id="26" minimum="0" maximum="1">        
+        <position height="18" width="27" x="604" y="747"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
