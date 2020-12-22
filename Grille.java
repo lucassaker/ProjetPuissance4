@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 /**
- * class qu permet de définir le comportement de la Grille
+ * class qu permet de dï¿½finir le comportement de la Grille ah oui oui
  */
 public class Grille{
 	private ArrayList<Colonne> laGrille;
@@ -11,8 +11,8 @@ public class Grille{
 	 * constructeur de la Grille
 	 * @param a
 	 */
-	public Grille(int a){
-		if (a>0) this.laGrille = new ArrayList<Colonne>(a);
+	public Grille(int res){
+		if (res>0) this.laGrille = new ArrayList<Colonne>(a);
 		else this.laGrille = new ArrayList<Colonne>(10);
 		for(int i = 0; i<a; i++){
 			this.laGrille.add(new Colonne());
